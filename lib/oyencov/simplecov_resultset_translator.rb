@@ -17,6 +17,8 @@ require_relative "test_report_merger"
 #   "coverage" # constant string
 #     $rb_filepath # root relative paths
 #       [null, 1, 2, null, ...] # raw `Coverage.result` output
+#   "Integration Testing" # another test type
+#     ...
 # ```
 #
 module OyenCov
@@ -28,8 +30,6 @@ module OyenCov
     def self.translate(resultset_json_path, persist: false)
       # Open up the JSON
       resultset = JSON.parse(File.read(resultset_json_path))
-
-      # binding.irb
 
       # Loop through all the files
       # Set {"method" => runs, ...}

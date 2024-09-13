@@ -48,7 +48,8 @@ class SimplecovResultTranslatorTest < Minitest::Test
     orig_resultset_json_path = File
       .expand_path(
         "../sample_test_reports/simplecov/with_missing_file/.resultset.json",
-        File.dirname(__FILE__))
+        File.dirname(__FILE__)
+      )
     orig_resultset_json = File.read(orig_resultset_json_path)
     tmp_resultset_json = orig_resultset_json.gsub(/\$PROJECT_PATH/o, Dir.pwd)
     tmp_resultset_json_file = File.expand_path("tmp/test/simplecov-resultset.json")
